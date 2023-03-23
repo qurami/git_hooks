@@ -134,7 +134,7 @@ class Utils {
       ...?additionalBranchNames,
     ];
     // Matches all the words that preceed a `-` or `/` character.
-    final re = RegExp("r'^${supportedBranchNames.join('|')}[-/]");
+    final re = RegExp("^(${supportedBranchNames.join('|')})[-/]?");
     final isBranchValid = re.hasMatch(branchName);
     if (!isBranchValid) {
       throw Exception(
